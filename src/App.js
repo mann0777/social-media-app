@@ -1,8 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Post from './Post';
 
 function App() {
+  const[posts, setPosts] = useState([
+    {
+      username: " the.psychoholic",
+      caption: "this page is great",
+      imageUrl: "images/psychoholic.jpg"
+    },
+    {
+      username: " the.psychoholic",
+      caption: "this page is great",
+      imageUrl: "images/psychoholic.jpg"
+    }
+  ]);
+  
   return (
     <div className="app">
     
@@ -18,11 +31,15 @@ function App() {
     </div>
     
     <h1> Hello mann</h1>
-    <Post username=" the.psychoholic" caption= "this page is great" imageUrl= "images/psychoholic.jpg" />
-    <Post username=" desihumor" caption= "greatt" imageUrl= "images/psychoholic.jpg" />
-    <Post username=" guglu0777" caption= "dope" imageUrl= "images/psychoholic.jpg" />
-    <Post username=" qwert0777" caption= "this page is fun" imageUrl= "images/psychoholic.jpg"/>
-    {/* Posts */}
+
+    {
+      posts.map(post=>(
+        <Post username= {post.username} caption ={post.caption} imageUrl = {post.imageUrl} />
+      ))
+    }
+
+
+
 
     </div>
   );
