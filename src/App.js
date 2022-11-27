@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Post from './Post';
+import { db, auth } from "./firebase";
 
 function App() {
   const[posts, setPosts] = useState([
-    {
-      username: " the.psychoholic",
-      caption: "this page is great",
-      imageUrl: "images/psychoholic.jpg"
-    },
-    {
-      username: " the.psychoholic",
-      caption: "this page is great",
-      imageUrl: "images/psychoholic.jpg"
-    }
+    
   ]);
+
+  // use effect runs a piece of code based on specific condition
+
+  useEffect(()=>{
+    db.collection('posts').onSnapshot(snapshot =>{
+      setPosts(snapshot.docs.map(doc=>doc.data()));
+    })
+ 
+  }, []);  
   
   return (
     <div className="app">

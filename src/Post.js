@@ -20,11 +20,11 @@ function Post({username, caption, imageUrl}) {
     
         {/*header -> avatar -> username */}
 
-        <img alt='' className='post__Image' src={imageUrl} />
+        <img alt='' className='post__Image' src={imageUrl} ></img>
 
         {/* image */}
 
-        <h4 className='post__text'><strong>{username}</strong> {caption}</h4>
+        <h3 className='post__text'><strong>{username}</strong> {caption}</h3>
 
         {/* username -> */}
     </div>
