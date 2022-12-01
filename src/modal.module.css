@@ -1,0 +1,40 @@
+.modalWrapper{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #505050;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal{
+    min-width: 400px;
+    min-height: 400px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.btnClose{
+    position: absolute;
+    top: 8px;
+    right: 8px;
+
+}
+@keyframes fadeInDown{
+    0%{
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    100%{
+        opacity: 100%;
+        transform: translateY(0);
+    }
+
+}
